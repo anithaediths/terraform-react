@@ -1,0 +1,30 @@
+  pipeline {
+    agent {
+      node {
+        label "master"
+      } 
+    }
+
+    stages {
+      stage('fetch_latest_code') {
+        steps {
+          git credentialsId: '', url: 'https://github.com/anithaediths/terraform-project1'
+        }
+      }
+
+      stage('TF Init') {
+        steps {
+          sh 'terraform init'
+          sh 'terraform plan'
+        }      
+      }
+
+      stage('TF Plan') {
+        steps {
+          sh 'cd terragrunt-config/environments/dev'
+          sh 'terraform plan'
+        }      
+      }
+
+    } 
+  }
