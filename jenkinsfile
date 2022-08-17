@@ -6,16 +6,15 @@
     }
     stages {
       stage('checkout') {
-            steps {
-                 git url: 'https://github.com/anithaediths/terraform-project1.git'
-            }
+        steps {
+          checkout scm
+        }
       }
 
       stage('TF Init') {
         steps {
           sh 'pwd'
           sh 'ls -ltra'
-          sh 'cd terraform'
           sh 'terraform init'
         }      
       }
