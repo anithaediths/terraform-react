@@ -15,13 +15,13 @@
         steps {
           sh 'pwd'
           sh 'ls -ltra'
-          sh 'terraform init'
+          sh 'cd terragrunt-config/environments/dev'
+          sh 'terragrunt init'
         }      
       }
 
       stage('TF Plan') {
         steps {
-          sh 'cd terragrunt-config/environments/dev'
           sh 'terraform plan'
         }      
       }
