@@ -8,5 +8,5 @@ terraform {
 }
 
 inputs = {
-  bucket_name    = "dev-third-bucket"
+  bucket_name  = "dev-fourth-bucket"
 }

@@ -3,3 +3,5 @@
 .terragrunt-source-version
 .terragrunt-init-required
 .terraform/
+.DS_Store
+.terragrunt-cache
