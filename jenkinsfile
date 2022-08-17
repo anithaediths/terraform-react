@@ -11,6 +11,12 @@
         }
       }
 
+      stage('tf check') {
+        steps {
+          sh 'terraform --version'
+        }
+      }
+
       stage('TF Init') {
         steps {
           sh 'pwd'
