@@ -5,16 +5,21 @@
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
     stages {
-      stage('fetch_latest_code') {
-        steps {
-          git credentialsId: '', url: 'https://github.com/anithaediths/terraform-project1'
-        }
-      }
+      stage('checkout') {
+            steps {
+                 script{
+                        dir("terraform")
+                        {
+                            git "https://github.com/anithaediths/terraform-project1.git"
+                        }
+                    }
+                }
+            }
 
       stage('TF Init') {
         steps {
+          sh 'cd terraform'
           sh 'terraform init'
-          sh 'terraform plan'
         }      
       }
 
