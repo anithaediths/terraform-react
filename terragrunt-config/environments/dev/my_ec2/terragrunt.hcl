@@ -9,4 +9,5 @@ terraform {
 inputs = {
   ami  = "ami-0adf9cd48df80c022"
   instance_type = "t2.micro"
+  availability_zone = "us-east-1b"
 }

@@ -5,3 +5,7 @@ variable "ami" {
 variable "instance_type" {
   type = string
 }
+
+variable "availability_zone" {
+      type = string
+}
