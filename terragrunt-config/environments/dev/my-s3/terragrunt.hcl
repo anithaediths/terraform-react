@@ -8,5 +8,5 @@ terraform {
 }
 
 inputs = {
-  bucket_name  = "dev-fourth-bucket"
+  bucket_name  = "dev-my-first-react-app"
 }
