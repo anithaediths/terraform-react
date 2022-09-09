@@ -3,10 +3,9 @@ include {
 }
 
 terraform {
-   # source = "../../../src/resources//s3"
     source = "../../../src//my-s3"
 }
 
 inputs = {
-  bucket_name  = "dev-my-second-react-app"
+  bucket_name  = "at-my-first-react-app"
 }

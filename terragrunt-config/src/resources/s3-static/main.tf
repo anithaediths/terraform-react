@@ -30,4 +30,6 @@ resource "aws_s3_bucket_object" "file" {
   source      = "${var.website_root}/${each.key}"
   source_hash = filemd5("${var.website_root}/${each.key}")
   acl         = "public-read"
+  content_type = "text/html"
+
 }
